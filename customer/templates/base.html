@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>cusShow</title>
+        <link rel="stylesheet" href="{% static "styles.css" %}" />
+    
+    </head>
+
+    <body>
+        <div>
+
+        
+        <h1>List of Customers: </h>
+
+        {% if customer %}
+        <table>
+            <thead>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Address </th>
+            </thead>
+            {% for cus in customer %}
+            <tr>
+                <td>{{cus.full_name}}</td>
+                <td>{{cus.email}}</td>
+                <td>{{cus.date_of_birth}}</td>
+                <td>{{cus.address}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+
+        <p>No record found</p>
+
+        {% endif %}
+
+        </div>
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+</html>
